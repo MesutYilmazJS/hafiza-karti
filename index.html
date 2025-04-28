@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <div class="logo"></div>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</header>
+<body>
+    <div>
+         <div>
+            <div class="header">
+                <h1>Hafıza Kartı</h1>
+            </div>
+            <div class="grid">
+                <div class="header_btn">
+                    <button class="oyun_start_btn" onclick="startGame('16')">4 X 4 Oyna</button>
+                    <button class="oyun_start_btn" onclick="startGame('20')">4 X 5 Oyna</button>
+                    <button class="oyun_start_btn" onclick="startGame('30')">5 X 6 Oyna</button>
+                </div>
+            </div>
+            <div class="grid" id="tahta_id"></div>
+        </div>
+        <div id="tebrikler" class="tebrikler" style="display: none;">
+            <p>🎉 Tebrikler! Tüm kartları doğru eşleştirdiniz!</p>
+            <button onclick="startGame(window.say);"> Tekrar Oyna </button>
+        </div>  
+    </div>
+</body>
+<script type="text/javascript" src="style/index.js"></script>
+</html>

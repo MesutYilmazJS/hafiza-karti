@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    padding: 30px 20px 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+span {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+}
+
+.header_btn {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px 0 30px;
+    gap: 10px;
+}
+
+.oyun_start_btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.oyun_start_btn:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    padding: 20px;
+    width: 100%; /* veya 90vw */
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.grid[data-size='16'] {
+    grid-template-columns: repeat(4, 1fr);
+}
+.grid[data-size='20'] {
+    grid-template-columns: repeat(5, 1fr);
+}
+.grid[data-size='30'] {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: clamp(1.5rem, 5vw, 2rem); /* 👈 Dinamik boyut */
+    overflow: hidden;
+    line-height: 1;
+}
+.card.flipped.matched {
+    opacity: 0.5;
+}
+
+
+
+.card:hover {
+    transform: scale(1.05);
+}
+.tebrikler {
+    background-color: #fff;
+    color: #4CAF50;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-46%, -50%);
+    z-index: 999;
+    text-align: center;
+    animation: popin 0.5s ease-out;
+    max-width: 48%;
+    box-sizing: border-box;
+}
+
+
+@keyframes popin {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+.tebrikler button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tebrikler button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
